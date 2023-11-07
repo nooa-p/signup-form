@@ -14,6 +14,13 @@ const config: Config = {
       'dark': 'hsl(249, 10%, 26%)',
       'gray': 'hsl(246, 25%, 77%)',
       'white': 'rgb(255 255 255)'
+    },
+
+    extend: {
+      boxShadow: {
+        'DEFAULT': '0 6px 1px 0 rgba(0, 0, 0, 0.15)',
+        'sm': '0 2px 1px 0 hsl(154, 59%, 49%)'
+      }
     }
   },
   plugins: [],
