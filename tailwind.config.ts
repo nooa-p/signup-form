@@ -10,7 +10,11 @@ const config: Config = {
     colors: {
       'red': 'hsl(0, 100%, 74%)',
       'blue': 'hsl(248, 32%, 49%)',
-      'green': 'hsl(154, 59%, 51%)',
+      'green': {
+        'DEFAULT': 'hsl(154, 59%, 51%)',
+        'light': 'hsl(154, 59%, 70%)',
+        'dark': 'hsl(154, 59%, 49%)'
+      },
       'dark': {
         'DEFAULT': 'hsl(249, 10%, 26%)',
         'light': 'hsl(249, 10%, 55%)'
