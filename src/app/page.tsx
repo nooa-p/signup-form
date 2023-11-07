@@ -7,11 +7,11 @@ export default function Home() {
           <h1 className='text-center lg:text-left text-white text-3xl lg:text-5xl font-bold'>
             Learn to code by watching others
           </h1>
-          <p className='text-center lg:text-left text-white'>
+          <p className='text-center lg:text-left text-white font-medium'>
             See how experienced developers solve problems in real-time. Watching scripted tutorials is great, 
             but understanding how developers think is invaluable.
           </p>
-          <p className='text-center lg:text-left text-white text-xs'>
+          <p className='text-center lg:text-left text-white text-[11px]'>
             Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. Coded by <a href="https://github.com/nooa-p">Nooa Peltokangas</a>.
           </p>
         </div>
@@ -21,13 +21,13 @@ export default function Home() {
           </div>
           <div className='bg-white p-6 lg:p-10 rounded-lg shadow'>
             <form className=''>
-              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-4 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='First Name' />
-              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-4 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='Last Name' />
-              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-4 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='Email Address' />
-              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-4 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='Password'  />
-              <button className='bg-green text-white shadow-sm block w-full p-3 rounded'>Claim your free trial</button>
+              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='First Name' />
+              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='Last Name' />
+              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='Email Address' />
+              <input type="text" className='block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold' name="" id="" placeholder='Password'  />
+              <button className='bg-green text-white shadow-sm block w-full p-3 rounded uppercase font-medium tracking-wider'>Claim your free trial</button>
             </form>
-            <span>By clicking the button, you are agreeing to our Terms and Services</span>
+            <span className='block w-full text-center text-[11px] mt-4 text-gray font-medium'>By clicking the button, you are agreeing to our <a href="#" className='font-semibold text-red'>Terms and Services</a></span>
           </div>
         </div>
       </main>
