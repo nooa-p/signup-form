@@ -2,9 +2,9 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-      <main className='flex flex-col lg:flex-row max-w-5xl mt-10 lg:mt-0 h-screen lg:items-center mx-auto gap-10 lg:gap-6 p-8'>
+      <main className='flex flex-col lg:flex-row max-w-6xl mt-10 lg:mt-0 lg:h-screen lg:items-center mx-auto gap-10 lg:gap-6 p-8 pb-0'>
         <div className='flex flex-col content-evenly gap-6 lg:flex-1 lg:flex-grow'>
-          <h1 className='text-center lg:text-left text-white text-2xl lg:text-4xl font-bold'>
+          <h1 className='text-center lg:text-left text-white text-3xl lg:text-5xl font-bold'>
             Learn to code by watching others
           </h1>
           <p className='text-center lg:text-left text-white'>
@@ -21,11 +21,11 @@ export default function Home() {
           </div>
           <div className='bg-white p-6 lg:p-10 rounded-lg shadow'>
             <form className=''>
-              <input type="text" name="" id="" placeholder='First Name' className='block' />
-              <input type="text" name="" id="" placeholder='Last Name' className='block' />
-              <input type="text" name="" id="" placeholder='Email Address' className='block' />
-              <input type="text" name="" id="" placeholder='Password' className='block' />
-              <button className='bg-green text-white shadow-sm block'>Claim your free trial</button>
+              <input type="text" className='block w-full p-3.5 pl-5 rounded mb-4 border border-gray/[45]' name="" id="" placeholder='First Name' />
+              <input type="text" className='block w-full p-3.5 pl-5 rounded mb-4 border border-gray/[45]' name="" id="" placeholder='Last Name' />
+              <input type="text" className='block w-full p-3.5 pl-5 rounded mb-4 border border-gray/[45]' name="" id="" placeholder='Email Address' />
+              <input type="text" className='block w-full p-3.5 pl-5 rounded mb-4 border border-gray/[45]' name="" id="" placeholder='Password'  />
+              <button className='bg-green text-white shadow-sm block w-full p-3 rounded'>Claim your free trial</button>
             </form>
             <span>By clicking the button, you are agreeing to our Terms and Services</span>
           </div>
