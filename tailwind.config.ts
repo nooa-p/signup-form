@@ -12,7 +12,8 @@ const config: Config = {
       'blue': 'hsl(248, 32%, 49%)',
       'green': 'hsl(154, 59%, 51%)',
       'dark': 'hsl(249, 10%, 26%)',
-      'gray': 'hsl(246, 25%, 77%)'
+      'gray': 'hsl(246, 25%, 77%)',
+      'white': 'rgb(255 255 255)'
     }
   },
   plugins: [],
