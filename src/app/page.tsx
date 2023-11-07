@@ -2,14 +2,26 @@
 
 import React, { useState, useEffect } from 'react';
 
-const Validate = () => {
+const Home = () => {
   const[firstName, setFirstName] = useState('');
   const[lastName, setLastName] = useState('');
   const[email, setEmail] = useState('');
   const[passWord, setPassWord] = useState('')
   const[error, setError] = useState({});
   const[isValid, setIsValid] = useState(false);
-  
+
+  useEffect(() => {
+    validateForm();
+  }, [firstName, lastName, email, passWord]);
+
+  const validateForm = () => {
+    let errors: { firstName?: string, lastName?: string, email?: string, passWord?: string } = {};
+
+    if (!firstName) {
+      errors.firstName = 'First Name cannot be empty';
+    }
+  };
+
   return (
     <main className="flex flex-col lg:flex-row max-w-6xl mt-10 lg:mt-0 lg:h-screen lg:items-center mx-auto gap-10 lg:gap-6 p-8 pb-0">
       <div className="flex flex-col content-evenly gap-6 lg:flex-1 lg:flex-grow">
@@ -88,4 +100,4 @@ const Validate = () => {
   );
 }
 
-export default Validate;
+export default Home;
