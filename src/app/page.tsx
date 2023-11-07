@@ -20,7 +20,34 @@ const Home = () => {
     if (!firstName) {
       errors.firstName = 'First Name cannot be empty';
     }
+
+    if (!lastName) {
+      errors.lastName = 'Last Name cannot be empty';
+    }
+
+    if (!email) {
+      errors.email = 'Email Address cannot be empty';
+    } else if (!/\S+@\S+\.\S+/.test(email)) {
+      errors.email = 'Looks like this is not an email';
+    }
+
+    if (!passWord) {
+      errors.passWord = 'Password cannot be empty';
+    }
+
+    setError(errors);
+    if (errors.firstName !== undefined && errors.lastName !== undefined && errors.email !== undefined && errors.passWord !== undefined) {
+      setIsValid(true);
+    }
   };
+  
+  const handleSubmit = () => {
+    if (!isValid) {
+      console.log('not valid')
+    } else {
+      console.log('valid')
+    }
+  }
 
   return (
     <main className="flex flex-col lg:flex-row max-w-6xl mt-10 lg:mt-0 lg:h-screen lg:items-center mx-auto gap-10 lg:gap-6 p-8 pb-0">
@@ -84,7 +111,7 @@ const Home = () => {
               id=""
               placeholder="Password"
             />
-            <button className="bg-green text-white shadow-sm block w-full p-3 rounded uppercase font-medium tracking-wider hover:bg-green-light border border-green-dark">
+            <button className="bg-green text-white shadow-sm block w-full p-3 rounded uppercase font-medium tracking-wider hover:bg-green-light border border-green-dark" onClick={handleSubmit}>
               Claim your free trial
             </button>
           </form>
