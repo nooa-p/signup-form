@@ -3,5 +3,5 @@
 @tailwind utilities;
 
 body {
-    background: url('../../public/bg-intro-desktop.png') hsl(0, 100%, 74%);
+  background: url("../../public/bg-intro-desktop.png") hsl(0, 100%, 74%);
 }
