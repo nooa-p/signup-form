@@ -1,6 +1,15 @@
-import Image from "next/image";
+'use client'
 
-export default function Home() {
+import React, { useState, useEffect } from 'react';
+
+const Validate = () => {
+  const[firstName, setFirstName] = useState('');
+  const[lastName, setLastName] = useState('');
+  const[email, setEmail] = useState('');
+  const[passWord, setPassWord] = useState('')
+  const[error, setError] = useState({});
+  const[isValid, setIsValid] = useState(false);
+  
   return (
     <main className="flex flex-col lg:flex-row max-w-6xl mt-10 lg:mt-0 lg:h-screen lg:items-center mx-auto gap-10 lg:gap-6 p-8 pb-0">
       <div className="flex flex-col content-evenly gap-6 lg:flex-1 lg:flex-grow">
@@ -78,3 +87,5 @@ export default function Home() {
     </main>
   );
 }
+
+export default Validate;
