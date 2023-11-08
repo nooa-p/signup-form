@@ -3,51 +3,56 @@
 import React, { useState, useEffect } from 'react';
 
 const Home = () => {
-  const[firstName, setFirstName] = useState('');
-  const[lastName, setLastName] = useState('');
-  const[email, setEmail] = useState('');
-  const[passWord, setPassWord] = useState('')
-  const[error, setError] = useState({});
-  const[isValid, setIsValid] = useState(false);
+  const [inputFields, setInputFields] = useState<{first?: string, last?: string, email?: string, password?: string}>({
+    first: '',
+    last: '',
+    email: '',
+    password: ''
+  });
+  const [errors, setErrors] = useState<{first?: string, last?: string, email?: string, password?: string}>({});
+  const [submit, setSubmit] = useState(false);
 
-  useEffect(() => {
-    validateForm();
-  }, [firstName, lastName, email, passWord]);
-
-  const validateForm = () => {
-    let errors: { firstName?: string, lastName?: string, email?: string, passWord?: string } = {};
-
-    if (!firstName) {
-      errors.firstName = 'First Name cannot be empty';
+  const validateForm = (inputValues: any) => {
+    let errors: {first?: string, last?: string, email?: string, password?: string} = {};
+    if(!inputValues.first) {
+      errors.first = 'First Name cannot be empty';
     }
 
-    if (!lastName) {
-      errors.lastName = 'Last Name cannot be empty';
+    if (!inputValues.last) {
+      errors.last = 'Last Name cannot be empty'
     }
 
-    if (!email) {
+    if (!inputValues.email) {
       errors.email = 'Email Address cannot be empty';
-    } else if (!/\S+@\S+\.\S+/.test(email)) {
+    } else if (!/\S+@\S+\.\S+/.test(inputValues.email)) {
       errors.email = 'Looks like this is not an email';
     }
 
-    if (!passWord) {
-      errors.passWord = 'Password cannot be empty';
+    if (!inputValues.password) {
+      errors.password = 'Password cannot be empty';
     }
-
-    setError(errors);
-    if (errors.firstName !== undefined && errors.lastName !== undefined && errors.email !== undefined && errors.passWord !== undefined) {
-      setIsValid(true);
-    }
+    return errors;
   };
-  
-  const handleSubmit = () => {
-    if (!isValid) {
-      console.log('not valid')
-    } else {
-      console.log('valid')
-    }
+
+  const handleChange = (e: any) => {
+    setInputFields({ ...inputFields, [e.target.name]: e.target.value });
+  };
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    setErrors(validateForm(inputFields));
+    setSubmit(true);
+  };
+
+  const finishSubmit = () => {
+    alert('Submitted successfully!');
   }
+
+  useEffect(() => {
+    if (Object.keys(errors).length === 0 && submit) {
+      finishSubmit();
+    }
+  })
 
   return (
     <main className="flex flex-col lg:flex-row max-w-6xl mt-10 lg:mt-0 lg:h-screen lg:items-center mx-auto gap-10 lg:gap-6 p-8 pb-0">
@@ -82,34 +87,38 @@ const Home = () => {
           thereafter
         </div>
         <div className="bg-white p-6 lg:p-10 rounded-lg shadow">
-          <form className="">
+          <form className="" onSubmit={handleSubmit}>
             <input
               type="text"
-              className="block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark"
-              name=""
-              id=""
+              className={`block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.first ? 'border-2 border-red' : ''}`}
               placeholder="First Name"
+              name='first'
+              onChange={handleChange}
+              value={inputFields.first}
             />
             <input
               type="text"
-              className="block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark"
-              name=""
-              id=""
+              className={`block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.last ? 'border-2 border-red' : ''}`}
               placeholder="Last Name"
+              name='last'
+              onChange={handleChange}
+              value={inputFields.last}
             />
             <input
               type="text"
-              className="block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark"
-              name=""
-              id=""
+              className={`block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.email ? 'border-2 border-red' : ''}`}
               placeholder="Email Address"
+              name='email'
+              onChange={handleChange}
+              value={inputFields.email}
             />
             <input
-              type="text"
-              className="block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark"
-              name=""
-              id=""
+              type="password"
+              className={`block w-full p-3.5 pl-7 rounded mb-5 border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.password ? 'border-2 border-red' : ''}`}
               placeholder="Password"
+              name='password'
+              onChange={handleChange}
+              value={inputFields.password}
             />
             <button className="bg-green text-white shadow-sm block w-full p-3 rounded uppercase font-medium tracking-wider hover:bg-green-light border border-green-dark" onClick={handleSubmit}>
               Claim your free trial
