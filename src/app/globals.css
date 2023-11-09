@@ -3,5 +3,11 @@
 @tailwind utilities;
 
 body {
-  background: url("../../public/bg-intro-desktop.png") hsl(0, 100%, 74%);
+  background: url("/bg-intro-mobile.png") hsl(0, 100%, 74%);
+}
+
+@media (min-width: 768px) {
+  body {
+    background: url("/bg-intro-desktop.png") hsl(0, 100%, 74%);
+  }
 }
