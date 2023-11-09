@@ -55,7 +55,7 @@ const Home = () => {
   })
 
   return (
-    <main className="flex flex-col md:flex-row max-w-6xl mt-10 md:mt-0 md:h-screen md:items-center mx-auto gap-10 md:gap-6 p-8 pb-0">
+    <main className="flex flex-col md:flex-row max-w-6xl mt-10 md:mt-0 md:h-screen md:items-center mx-auto gap-10 md:gap-6 p-8 pb-4">
       <div className="flex flex-col content-evenly gap-6 md:flex-1 md:flex-grow">
         <h1 className="text-center md:text-left text-white text-3xl md:text-5xl font-bold">
           Learn to code by watching others
