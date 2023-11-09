@@ -10,6 +10,7 @@ This is a solution to the [Intro component with sign up form challenge on Fronte
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [Useful resources](#useful-resources)
 - [Author](#author)
 
 ## Overview
@@ -43,6 +44,10 @@ Users should be able to:
 - Mobile-first workflow
 - [React](https://reactjs.org/) - JS library
 - [Next.js](https://nextjs.org/) - React framework
+
+### Useful resources
+
+- [Form validation React](https://leanylabs.com/blog/form-validation-in-react/) - Helped me in validating user input & how to show error text & icon only when the input is invalid.
 
 ## Author
 
