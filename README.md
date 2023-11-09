@@ -31,7 +31,7 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
+- Solution URL: [https://www.frontendmentor.io/solutions/signup-form-with-nextjs-and-tailwind-css-Qk6wUB5mZd](https://www.frontendmentor.io/solutions/signup-form-with-nextjs-and-tailwind-css-Qk6wUB5mZd)
 - Live Site URL: [https://signup-form-beige.vercel.app/](https://signup-form-beige.vercel.app/)
 
 ## My process
