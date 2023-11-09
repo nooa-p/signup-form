@@ -19,7 +19,7 @@ const Home = () => {
     }
 
     if (!inputValues.last) {
-      errors.last = 'Last Name cannot be empty'
+      errors.last = 'Last Name cannot be empty';
     }
 
     if (!inputValues.email) {
@@ -88,74 +88,90 @@ const Home = () => {
         </div>
         <div className="bg-white p-6 md:p-10 rounded-lg shadow">
           <form className="relative" onSubmit={handleSubmit}>
-            <span 
+            {errors.first ? (
+              <span 
               className='inline-block bg-[url("/icon-error.svg")] w-6 h-6 absolute right-6 top-3.5'
-            >
-            </span>
+              >
+              </span>
+            ) : null}
             <input
               type="text"
-              className={`block w-full p-3.5 pl-7 rounded ${errors.first ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.first ? 'border-2 border-red' : ''}`}
+              className={`block w-full p-3.5 pl-7 rounded ${!errors.first ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.first ? 'border-2 border-red' : ''}`}
               placeholder="First Name"
               name='first'
               onChange={handleChange}
               value={inputFields.first}
             />
-            <span
+            {errors.first ? (
+              <span
               className='inline-block w-full text-right mt-1 mb-3 text-[11px] text-red italic font-semibold'
-            >
-              test
-            </span>
-            <span 
+              >
+                {errors.first}
+              </span>
+            ) : null }
+            {errors.last ? (
+              <span 
               className='inline-block bg-[url("/icon-error.svg")] w-6 h-6 absolute right-6 top-[103px]'
-            >
-            </span>
+              >
+              </span>
+            ) : null}
             <input
               type="text"
-              className={`block w-full p-3.5 pl-7 rounded ${errors.last ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.last ? 'border-2 border-red' : ''}`}
+              className={`block w-full p-3.5 pl-7 rounded ${!errors.last ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.last ? 'border-2 border-red' : ''}`}
               placeholder="Last Name"
               name='last'
               onChange={handleChange}
               value={inputFields.last}
             />
-            <span
+            {errors.last ? (
+              <span
               className='inline-block w-full text-right mt-1 mb-3 text-[11px] text-red italic font-semibold'
-            >
-              test
-            </span>
-            <span 
-              className='inline-block bg-[url("/icon-error.svg")] w-6 h-6 absolute right-6 top-[150px]'
-            >
-            </span>
+              >
+                {errors.last}
+              </span>
+            ) : null }
+            {errors.email ? (
+              <span 
+              className='inline-block bg-[url("/icon-error.svg")] w-6 h-6 absolute right-6 top-[190px]'
+              >
+              </span>
+            ) : null}
             <input
               type="text"
-              className={`block w-full p-3.5 pl-7 rounded ${errors.email ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.email ? 'border-2 border-red' : ''}`}
+              className={`block w-full p-3.5 pl-7 rounded ${!errors.email ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.email ? 'border-2 border-red' : ''}`}
               placeholder="Email Address"
               name='email'
               onChange={handleChange}
               value={inputFields.email}
             />
-            <span
+            {errors.email ? (
+              <span
               className='inline-block w-full text-right mt-1 mb-3 text-[11px] text-red italic font-semibold'
-            >
-              test
-            </span>
-            <span 
-              className='inline-block bg-[url("/icon-error.svg")] w-6 h-6 absolute right-6'
-            >  
-            </span>
+              >
+                {errors.email}
+              </span>
+            ) : null }
+            {errors.password ? (
+              <span 
+              className='inline-block bg-[url("/icon-error.svg")] w-6 h-6 absolute right-6 top-[278px]'
+              >
+              </span>
+            ) : null}
             <input
               type="password"
-              className={`block w-full p-3.5 pl-7 rounded ${errors.password ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.password ? 'border-2 border-red' : ''}`}
+              className={`block w-full p-3.5 pl-7 rounded ${!errors.password ? 'mb-5' : ''} border border-gray-light placeholder:text-dark-light placeholder:font-semibold focus:font-semibold focus:border-dark focus:text-dark focus:outline-none font-semibold text-dark ${errors.password ? 'border-2 border-red' : ''}`}
               placeholder="Password"
               name='password'
               onChange={handleChange}
               value={inputFields.password}
             />
-            <span
+            {errors.password ? (
+              <span
               className='inline-block w-full text-right mt-1 mb-3 text-[11px] text-red italic font-semibold'
-            >
-              test
-            </span>
+              >
+                {errors.password}
+              </span>
+            ) : null }
             <button className="bg-green text-white shadow-sm block w-full p-3 rounded uppercase font-medium tracking-wider hover:bg-green-light border border-green-dark" onClick={handleSubmit}>
               Claim your free trial
             </button>
